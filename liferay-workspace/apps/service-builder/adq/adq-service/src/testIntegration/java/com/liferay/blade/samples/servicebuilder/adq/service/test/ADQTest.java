@@ -34,6 +34,7 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -59,6 +60,17 @@ public class ADQTest {
 		new JMXBundleDeployer().deploy(_adqApiJarBSN, adqApiJar);
 
 		return ShrinkWrap.createFromZipFile(JavaArchive.class, jarFile);
+	}
+
+	@After
+	public static void cleanUpTest() {
+		List<Bar> bars = BarLocalServiceUtil.getBars(-1, -1);
+
+		if (!bars.isEmpty()) {
+			for (Bar bar : bars) {
+				BarLocalServiceUtil.deleteBar(bar);
+			}
+		}
 	}
 
 	@Test

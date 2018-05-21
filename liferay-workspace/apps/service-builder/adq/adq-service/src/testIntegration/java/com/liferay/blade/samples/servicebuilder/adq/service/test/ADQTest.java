@@ -81,7 +81,7 @@ public class ADQTest {
 		Bar bar1 = BarLocalServiceUtil.createBar(
 			CounterLocalServiceUtil.increment());
 
-		bar1.setField1(BAR1);
+		bar1.setField1(_BAR1);
 		bar1.setField2(false);
 		bar1.setField3(0);
 		bar1.setField4(_DATE);
@@ -92,7 +92,7 @@ public class ADQTest {
 		Bar bar2 = BarLocalServiceUtil.createBar(
 			CounterLocalServiceUtil.increment());
 
-		bar2.setField1(BAR2);
+		bar2.setField1(_BAR2);
 		bar2.setField2(false);
 		bar2.setField3(99);
 		bar2.setField4(_DATE);
@@ -103,7 +103,7 @@ public class ADQTest {
 		Bar bar3 = BarLocalServiceUtil.createBar(
 			CounterLocalServiceUtil.increment());
 
-		bar3.setField1(BAR3);
+		bar3.setField1(_BAR3);
 		bar3.setField2(false);
 		bar3.setField3(100);
 		bar3.setField4(_DATE);
@@ -114,7 +114,7 @@ public class ADQTest {
 		Bar bar4 = BarLocalServiceUtil.createBar(
 			CounterLocalServiceUtil.increment());
 
-		bar4.setField1(BAR4);
+		bar4.setField1(_BAR4);
 		bar4.setField2(false);
 		bar4.setField3(101);
 		bar4.setField4(_DATE);
@@ -125,7 +125,7 @@ public class ADQTest {
 		Bar bar5 = BarLocalServiceUtil.createBar(
 			CounterLocalServiceUtil.increment());
 
-		bar5.setField1(BAR5);
+		bar5.setField1(_BAR5);
 		bar5.setField2(false);
 		bar5.setField3(200);
 		bar5.setField4(_DATE);
@@ -137,31 +137,31 @@ public class ADQTest {
 
 		BarLocalServiceUtil.massUpdate();
 
-		List<Bar> bars = BarUtil.findByField1(BAR1);
+		List<Bar> bars = BarUtil.findByField1(_BAR1);
 		bar1 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 1 + ", but saw " + bar1.getField3(),
 			bar1.getField3() == 1);
 
-		bars = BarUtil.findByField1(BAR2);
+		bars = BarUtil.findByField1(_BAR2);
 		bar2 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 100 + ", but saw " + bar2.getField3(),
 			bar2.getField3() == 100);
 
-		bars = BarUtil.findByField1(BAR3);
+		bars = BarUtil.findByField1(_BAR3);
 		bar3 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 100 + ", but saw " + bar3.getField3(),
 			bar3.getField3() == 100);
 
-		bars = BarUtil.findByField1(BAR4);
+		bars = BarUtil.findByField1(_BAR4);
 		bar4 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 101 + ", but saw " + bar4.getField3(),
 			bar4.getField3() == 101);
 
-		bars = BarUtil.findByField1(BAR5);
+		bars = BarUtil.findByField1(_BAR5);
 		bar5 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 200 + ", but saw " + bar5.getField3(),
@@ -171,46 +171,46 @@ public class ADQTest {
 
 		BarLocalServiceUtil.massUpdate();
 
-		bars = BarUtil.findByField1(BAR1);
+		bars = BarUtil.findByField1(_BAR1);
 		bar1 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 1 + ", but saw " + bar1.getField3(),
 			bar1.getField3() == 2);
 
-		bars = BarUtil.findByField1(BAR2);
+		bars = BarUtil.findByField1(_BAR2);
 		bar2 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 100 + ", but saw " + bar2.getField3(),
 			bar2.getField3() == 100);
 
-		bars = BarUtil.findByField1(BAR3);
+		bars = BarUtil.findByField1(_BAR3);
 		bar3 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 100 + ", but saw " + bar3.getField3(),
 			bar3.getField3() == 100);
 
-		bars = BarUtil.findByField1(BAR4);
+		bars = BarUtil.findByField1(_BAR4);
 		bar4 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 101 + ", but saw " + bar4.getField3(),
 			bar4.getField3() == 101);
 
-		bars = BarUtil.findByField1(BAR5);
+		bars = BarUtil.findByField1(_BAR5);
 		bar5 = bars.get(0);
 		Assert.assertTrue(
 			"Expected " + 200 + ", but saw " + bar5.getField3(),
 			bar5.getField3() == 200);
 	}
 
-	private final String BAR1 = "bar1";
+	private static final String _BAR1 = "bar1";
 
-	private final String BAR2 = "bar2";
+	private static final String _BAR2 = "bar2";
 
-	private final String BAR3 = "bar3";
+	private static final String _BAR3 = "bar3";
 
-	private final String BAR4 = "bar4";
+	private static final String _BAR4 = "bar4";
 
-	private final String BAR5 = "bar5";
+	private static final String _BAR5 = "bar5";
 
 	private static final Date _DATE = new Date();
 

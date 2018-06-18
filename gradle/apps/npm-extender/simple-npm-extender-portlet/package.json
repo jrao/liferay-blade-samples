@@ -1,0 +1,24 @@
+{
+    "dependencies": {
+        "isarray": "2.0.2"
+    },
+    "description": "Simple NPM Extender Portlet",
+    "devDependencies": {
+        "babel-cli": "6.26.0",
+        "babel-preset-es2015": "6.24.1",
+        "liferay-npm-bundler": "^2.0.0"
+    },
+    "main": "lib/index.es.js",
+    "name": "simple-npm-extender-portlet",
+    "private": true,
+    "version": "1.0.0",
+    "portlet": {
+        "com.liferay.portlet.display-category": "category.sample",
+        "com.liferay.portlet.instanceable": "true",
+        "javax.portlet.display-name": "Simple NPM Extender Portlet",
+        "javax.portlet.security-role-ref": "power-user,user"
+    },
+    "scripts": {
+        "build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
+    }
+}

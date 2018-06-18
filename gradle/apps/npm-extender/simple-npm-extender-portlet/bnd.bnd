@@ -1,0 +1,5 @@
+Bundle-Name: simple-npm-extender-portlet
+Bundle-SymbolicName: com.liferay.blade.npm.simple.npm.extender.portlet
+Bundle-Version: 1.0.0
+Require-Capability: osgi.extender;filter:="(osgi.extender=liferay.npm.portlet)"
+-sources: true
